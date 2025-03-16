@@ -11,7 +11,7 @@ using namespace std;
 vector<int> extract_shortest_path(const vector<int>& distances, const vector<int>& previous, int destination) {
     vector<int> path;
     int current = destination;
-    while (distances[current] != 0) {
+    while (previous[current] != -1 && distances[current] != 0) {
         path.push_back(current);
         current = previous[current];
     }
