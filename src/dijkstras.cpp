@@ -32,7 +32,7 @@ void print_path(const vector<int>& path, int total_cost) {
         }
     }
     cout << endl;
-    cout << "Total cost is " << total_cost << endl;
+    cout << " Total cost is " << total_cost << endl;
 }
 
 vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& previous) {
