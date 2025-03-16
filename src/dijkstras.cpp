@@ -8,10 +8,10 @@
 
 using namespace std;
 
-vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination) {
+vector<int> extract_shortest_path(const vector<int>& distances, const vector<int>& previous, int destination) {
     vector<int> path;
     int current = destination;
-    while (current != -1) {
+    while (distances[node] != 0) {
         path.push_back(current);
         current = previous[current];
     }
@@ -27,11 +27,8 @@ void print_path(const vector<int>& path, int total_cost) {
 
     for (size_t i = 0; i < path.size(); ++i) {
         cout << path[i] << " ";
-        // if (i < path.size() - 1) {
-        //     cout << " ";
-        // }
     }
-    // cout << " " << endl;
+
     cout << endl;
     cout << "Total cost is " << total_cost << endl;
 }
