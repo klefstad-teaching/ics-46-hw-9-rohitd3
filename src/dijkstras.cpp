@@ -8,7 +8,7 @@
 
 using namespace std;
 
-vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination) {
+vector<int> extract_shortest_path(const vector<int>& previous, int destination) {
     vector<int> path;
     int current = destination;
     while (current != -1) {
@@ -20,7 +20,7 @@ vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector
 }
 
 void print_path(const vector<int>& path, int total_cost) {
-    if (path.empty()) {
+    if (total_cost == INF) {
         cout << "No path found." << endl;
         return;
     }
