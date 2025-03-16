@@ -8,7 +8,7 @@
 
 using namespace std;
 
-vector<int> extract_shortest_path(const vector<int>& distances, const vector<int>& previous, int destination) {
+vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination) {
     vector<int> path;
     int current = destination;
     while (current != -1) {
