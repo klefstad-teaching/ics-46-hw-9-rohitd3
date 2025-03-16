@@ -7,8 +7,9 @@
 #include <stack>
 
 using namespace std;
+constexpr int INF = numeric_limits<int>::max();
 
-vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination) {
+vector<int> extract_shortest_path(const vector<int>& previous, int destination) {
     vector<int> path;
     int current = destination;
     while (current != -1) {
