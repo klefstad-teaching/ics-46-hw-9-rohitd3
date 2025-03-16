@@ -19,15 +19,20 @@ vector<int> extract_shortest_path(const vector<int>& distances, const vector<int
     return path;
 }
 
-void print_path(const vector<int>& v, int total) {
-    cout << "Path: ";
-    for (size_t i = 0; i < v.size(); ++i) {
-        cout << v[i];
-        if (i < v.size() - 1) {
-            cout << " → ";
+void print_path(const vector<int>& path, int total_cost) {
+    if (path.empty()) {
+        cout << "No path found." << endl;
+        return;
+    }
+
+    for (size_t i = 0; i < path.size(); ++i) {
+        cout << path[i];
+        if (i < path.size() - 1) {
+            cout << " ";
         }
     }
-    cout << ", Total Cost: " << total << endl;
+    cout << endl;
+    cout << "Total cost is " << total_cost << endl;
 }
 
 vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& previous) {
