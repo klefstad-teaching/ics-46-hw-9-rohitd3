@@ -34,38 +34,10 @@ void print_path(const vector<int>& path, int total_cost) {
 }
 
 vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& previous) {
-//     int numVertices = G.size();
-//     vector<int> distances(numVertices, INF);
-//     vector<bool> visited(numVertices, false);
-//     distances[source] = 0;
-    
-//     priority_queue<pair<int, int>> minHeap;  // pair<vertex, weight>
-//     minHeap.push({source, 0});
-
-//     while (!minHeap.empty()) {
-//         int u = minHeap.top().second;
-//         if (visited[u]) continue;
-//         visited[u] = true;
-
-//         for (Edge edge : graph[u]) {
-//             int v = edge.dest;
-//             int weight = edge.second;
-
-//             if (!visited[v] && distances[u] + weight < distances[v]) {
-//                 distances[v] = distances[u] + weight;
-//                 previous[v] = u;
-//                 minHeap.push({v, distances[v]});
-//             }
-//         }
-//     }
-
-//     return distances;
-
-// }
-
 
     int n = G.size();
     vector<int> distance(n, INF);
+    previous.assign(n, -1);
     distance[source] = 0;
 
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
