@@ -5,13 +5,14 @@
 #include <queue>
 #include <limits>
 #include <stack>
+#include <algorithm>
 
 using namespace std;
 
 vector<int> extract_shortest_path(const vector<int>& distances, const vector<int>& previous, int destination) {
     vector<int> path;
     if(distances[destination] == INF) return path;
-    for (int i = destination; i != -1; i = previous [i]) {
+    for (int i = destination; i != -1; i = previous[i]) {
         path.push_back(i);
     }
     reverse(path.begin(), path.end());
