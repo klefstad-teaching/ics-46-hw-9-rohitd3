@@ -10,10 +10,9 @@ using namespace std;
 
 vector<int> extract_shortest_path(const vector<int>& distances, const vector<int>& previous, int destination) {
     vector<int> path;
-    int current = destination;
-    while (previous[current] != -1 && distances[current] != 0) {
-        path.push_back(current);
-        current = previous[current];
+    if(distances[destination] == INF) return path;
+    for (int i = destination; i != -1; i = previous [i]) {
+        path.push_back(i);
     }
     reverse(path.begin(), path.end());
     return path;
